@@ -11,7 +11,7 @@ Ouvrez un terminal et executez les commandes suivantes :
 ```
     cd $INSTALL_DIR
     modman init
-    modman clone https://github.com/we-trust/welovecustomers_connector/
+    modman clone https://github.com/welovecustomers/connector.magento1
     modman deploy
     modman clean
 ```
