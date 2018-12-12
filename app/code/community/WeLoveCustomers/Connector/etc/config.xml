@@ -14,11 +14,6 @@
             <wlc_connector_resource>
                 <class>WeLoveCustomers_Connector_Model_Resource</class>
             </wlc_connector_resource>
-            <sales>
-                <rewrite>
-                    <order>My_Mod_Model_Sales_Order</order>
-                </rewrite>
-            </sales>
         </models>
         <blocks>
             <wlc_connector>
