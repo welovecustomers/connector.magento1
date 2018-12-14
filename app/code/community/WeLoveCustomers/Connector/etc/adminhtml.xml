@@ -1,18 +1,30 @@
 <?xml version="1.0"?>
 <config>
+    <layout>
+        <updates>
+            <module module="WeLoveCustomers_Connecter">
+                <file>wlc_connector_admin.xml</file>
+            </module>
+        </updates>
+    </layout>
     <menu>
         <wlc_connector translate="title" module="wlc_connector">
             <title>WeLoveCustomers</title>
             <sort_order>81</sort_order>
             <children>
+                <reports translate="title" module="wlc_connector">
+                    <title>Reports</title>
+                    <sort_order>2</sort_order>
+                    <action>adminhtml/wlc_connector/reports</action>
+                </reports>
                 <configuration translate="title" module="wlc_connector">
                     <title>Configuration</title>
-                    <sort_order>0</sort_order>
+                    <sort_order>1</sort_order>
                     <action>adminhtml/system_config/edit/section/wlc_connector</action>
                 </configuration>
                 <create_account translate="title" module="wlc_connector">
                     <title>Create Account</title>
-                    <sort_order>2</sort_order>
+                    <sort_order>3</sort_order>
                     <action>adminhtml/wlc_connector/createAccount</action>
                 </create_account>
             </children>

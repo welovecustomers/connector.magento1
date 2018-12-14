@@ -1,0 +1,99 @@
+<?php /* @var $this WeLoveCustomers_Connector_Block_Adminhtml_Reports */ ?>
+
+<style>
+    .success {
+        color: #79a22e !important;
+    }
+
+    .info {
+        color: #007bdb !important;
+    }
+
+    .danger {
+        color: #e22626 !important;
+    }
+
+    .warning {
+        color: #eb5202 !important;
+    }
+
+    .offer-amount {
+        font-size: 16px;
+        color: #777777 !important;
+        font-weight: normal;
+    }
+</style>
+
+<table cellspacing="25" width="100%">
+    <tbody><tr>
+        <td>                        <div class="entry-edit">
+                <div class="entry-edit-head">
+                    <h4>
+                        Godfather offer :
+                    </h4>
+                </div>
+                <fieldset class="a-center bold">
+                    <span class="nowrap" style="font-size:18px;">
+                        <span class="price">
+                            <?php echo $this->getMasterInfo() ?>
+                        </span>
+                    </span>
+                </fieldset>
+            </div>
+            <div class="entry-edit">
+                <div class="entry-edit-head">
+                    <h4>
+                        Godson offer :
+                    </h4>
+                </div>
+                <fieldset class="a-center bold">
+                    <span class="nowrap" style="font-size:18px;">
+                        <span class="price">
+                            <?php echo $this->getSlaveInfo() ?>
+                        </span>
+                    </span>
+                </fieldset>
+            </div>
+        </td>
+        <td>
+            <div class="entry-edit" style="border:1px solid #ccc;">
+                <div class="box" style="margin:20px;">
+                    <p class="a-center">
+                        Find more information on our website WeLoveCustomers
+                        <a href="https://app.welovecustomers.fr" target="_blank" class="action action-advanced-reports"
+                           data-index="analytics-service-link" title="Go to Advanced Reporting">
+            <span>
+                Go to Advanced Reporting
+            </span>
+                        </a>
+                    </p>
+                </div>
+                <div style="margin:20px;">
+                    <div class="box" id="dashboard_diagram_totals">
+                        <div class="entry-edit">
+                            <table cellspacing="0" width="100%">
+                                <tbody><tr>
+                                    <td class="a-center bold">
+                                        <span>Sponsorship :</span><br>
+                                        <span class="nowrap <?php  echo $this->getSponsoringClass(); ?>" style="font-size:18px">
+                                            <span class="price">
+                                                <?php echo $this->getSponsoringResult(); ?>
+                                            </span>
+                                        </span>
+                                    </td>
+                                    <td class="a-center bold">
+                                        <span>NPS score : </span><br>
+                                        <span class="nowrap <?php  echo $this->getNPSClass(); ?>" style="font-size:18px">
+                                            <span class="price">
+                                                <?php  echo $this->getNPSScore(); ?>
+                                            </span>
+                                    </td>
+                                </tr>
+                                </tbody></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    </tbody></table>

@@ -24,4 +24,15 @@ class WeLoveCustomers_Connector_Adminhtml_Wlc_ConnectorController extends Mage_A
 
         return $this->_redirectUrl($this->__($url,$helper->getExtensionVersion(),$helper->getDomainName()));
     }
+
+    public function reportsAction() {
+
+        $this->loadLayout()
+            ->_setActiveMenu('wlc_connector/reports')
+            ->_title($this->__('Reports'));
+        $this->renderLayout();
+
+
+
+    }
 }

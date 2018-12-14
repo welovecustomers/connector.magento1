@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_wlc_connector_reports>
+        <reference name="content">
+            <block type="wlc_connector/adminhtml_reports" name="wlc.reports" template="wlc_connector/reports.phtml"/>
+        </reference>
+    </adminhtml_wlc_connector_reports>
+</layout>
