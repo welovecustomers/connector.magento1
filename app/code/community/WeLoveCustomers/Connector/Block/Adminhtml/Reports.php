@@ -152,4 +152,11 @@ class WeLoveCustomers_Connector_Block_Adminhtml_Reports extends Mage_Checkout_Bl
         return "info";
     }
 
+    /**
+     * @return string
+     */
+    public function getLinkUrl(){
+        return Mage::helper("adminhtml")->getUrl('*/wlc_connector/createAccount');
+    }
+
 }

@@ -2,7 +2,7 @@
 <config>
     <modules>
         <WeLoveCustomers_Connector>
-            <version>1.2.0</version>
+            <version>1.2.2</version>
         </WeLoveCustomers_Connector>
     </modules>
     <global>
@@ -11,9 +11,9 @@
                 <class>WeLoveCustomers_Connector_Model</class>
                 <resourceModel>wlc_connector_resource</resourceModel>
             </wlc_connector>
-            <wlc_connector_resource>
+            <welovecustomers_connector_setup>
                 <class>WeLoveCustomers_Connector_Model_Resource</class>
-            </wlc_connector_resource>
+            </welovecustomers_connector_setup>
         </models>
         <blocks>
             <wlc_connector>
@@ -64,6 +64,13 @@
             </updates>
         </layout>
         <routers>
+            <config_check>
+                <use>standard</use>
+                <args>
+                    <module>WeLoveCustomers_Connector_Extra</module>
+                    <frontName>wlc</frontName>
+                </args>
+            </config_check>
             <checkout>
                 <args>
                     <modules>

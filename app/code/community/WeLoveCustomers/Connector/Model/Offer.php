@@ -13,6 +13,7 @@ class Offer
     const TYPE_AMOUNT = "amount";
     const TYPE_FREE_SHIPPING = "freeshipping";
 
+    const COUPON_PREFIX="[WeLoveCustomers]";
     /**
      * Offer constructor.
      * @param array $data
@@ -30,6 +31,10 @@ class Offer
         $this->maximumDaysDelayForReward= $data["maximumDaysDelayForReward"];
         $this->offerValue= $data["offerValue"];
         $this->offerValueType= $data["offerValueType"];
+    }
+
+    static function FromWLC($rule) {
+        return substr($rule->getDescription(), 0, strlen(Offer::COUPON_PREFIX)) == self::COUPON_PREFIX;
     }
 
     public $id;

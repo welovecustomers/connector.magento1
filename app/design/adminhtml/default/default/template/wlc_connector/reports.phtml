@@ -29,7 +29,7 @@
         <td>                        <div class="entry-edit">
                 <div class="entry-edit-head">
                     <h4>
-                        Godfather offer :
+                        <?php echo $this->__('Godfather offer');?>  :
                     </h4>
                 </div>
                 <fieldset class="a-center bold">
@@ -43,7 +43,7 @@
             <div class="entry-edit">
                 <div class="entry-edit-head">
                     <h4>
-                        Godson offer :
+                        <?php echo $this->__('Godson offer');?>  :
                     </h4>
                 </div>
                 <fieldset class="a-center bold">
@@ -59,11 +59,11 @@
             <div class="entry-edit" style="border:1px solid #ccc;">
                 <div class="box" style="margin:20px;">
                     <p class="a-center">
-                        Find more information on our website WeLoveCustomers
-                        <a href="https://app.welovecustomers.fr" target="_blank" class="action action-advanced-reports"
+                        <?php echo $this->__('Find more information on our website WeLoveCustomers');?>
+                        <a href="<?php echo $this->getLinkUrl();?>" target="_blank" class="action action-advanced-reports"
                            data-index="analytics-service-link" title="Go to Advanced Reporting">
             <span>
-                Go to Advanced Reporting
+                <?php echo $this->__('Go to Advanced Reporting');?>
             </span>
                         </a>
                     </p>
@@ -74,7 +74,9 @@
                             <table cellspacing="0" width="100%">
                                 <tbody><tr>
                                     <td class="a-center bold">
-                                        <span>Sponsorship :</span><br>
+                                        <span>
+                                            <?php echo $this->__('Sponsorship');?> :
+                                        </span><br>
                                         <span class="nowrap <?php  echo $this->getSponsoringClass(); ?>" style="font-size:18px">
                                             <span class="price">
                                                 <?php echo $this->getSponsoringResult(); ?>
@@ -82,7 +84,9 @@
                                         </span>
                                     </td>
                                     <td class="a-center bold">
-                                        <span>NPS score : </span><br>
+                                        <span>
+                                            <?php echo $this->__('NPS Score');?> : 
+                                        </span><br>
                                         <span class="nowrap <?php  echo $this->getNPSClass(); ?>" style="font-size:18px">
                                             <span class="price">
                                                 <?php  echo $this->getNPSScore(); ?>
