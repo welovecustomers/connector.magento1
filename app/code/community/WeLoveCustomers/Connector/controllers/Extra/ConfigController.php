@@ -3,7 +3,7 @@
 require_once 'Mage/Checkout/controllers/CartController.php';
 require_once 'Mage/SalesRule/Model/Rule.php';
 require_once 'WeLoveCustomers/Connector/DTO/OfferApiResponse.php';
-require_once 'WeLoveCustomers/Connector/Endpoint/ReferralInfosEndpoint.php';
+require_once 'WeLoveCustomers/Connector/Endpoint/CheckConfigEndpoint.php';
 
 class WeLoveCustomers_Connector_Extra_ConfigController extends Mage_Checkout_CartController
 {
@@ -18,7 +18,7 @@ class WeLoveCustomers_Connector_Extra_ConfigController extends Mage_Checkout_Car
      */
     public function getEndpoint(){
         if(!$this->endpoint) {
-            $this->endpoint = new ReferralInfosEndpoint();
+            $this->endpoint = new CheckConfigEndpoint();
         }
 
         return $this->endpoint;
@@ -26,9 +26,9 @@ class WeLoveCustomers_Connector_Extra_ConfigController extends Mage_Checkout_Car
 
     public function checkAction() {
         $status = "ko";
-        $result = $this->getEndpoint()->findReferralInfos();
+        $isValidConfig = $this->getEndpoint()->checkConfig();
 
-        if($result->infos) {
+        if($isValidConfig) {
             $status = "ok";
         }
 

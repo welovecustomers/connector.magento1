@@ -6,7 +6,7 @@
  * Time: 16:55
  */
 
-require_once 'WeLoveCustomers/Connector/DTO/ReferralInfosApiResponse.php';
+require_once 'WeLoveCustomers/Connector/DTO/OfferApiResponse.php';
 require_once 'WeLoveCustomers/Connector/Endpoint/BaseEndpoint.php';
 
 class CartRuleEndpoint extends BaseEndpoint
