@@ -16,7 +16,7 @@ class BaseEndpoint
     protected function doAuthRequest($serviceName, $params = array()) {
         $authParams = array_merge(array(
             'customerKey' => $this->getWclConnectionHelper()->getApiKey(),
-            'glue' => $this->getWclConnectionHelper()->getApiGlue(),
+            'apiGlue' => $this->getWclConnectionHelper()->getApiGlue(),
         ), $params);
 
         return $this->getWclConnectionHelper()->callApi($serviceName, $authParams);
