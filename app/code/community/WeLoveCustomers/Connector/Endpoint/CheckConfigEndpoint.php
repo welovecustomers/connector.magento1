@@ -13,19 +13,14 @@ class CheckConfigEndpoint extends BaseEndpoint
 
     public function checkConfig() {
 
-        $couponCode = "config_check";
-
-        $params = array(
-            'inputCode' => $couponCode
-        );
-
-        $jsonResponse = $this->doAuthRequest('checkOfferCode', $params);
+        $jsonResponse = $this->doAuthRequest('checkInstall');
 
         if($jsonResponse) {
-            return true;
+            $response = json_decode($jsonResponse);
+            return $response->res;
         }
 
-        return null;
+        return false;
 
     }
 
