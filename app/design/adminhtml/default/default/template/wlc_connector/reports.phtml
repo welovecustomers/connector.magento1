@@ -75,11 +75,31 @@
                                 <tbody><tr>
                                     <td class="a-center bold">
                                         <span>
-                                            <?php echo $this->__('Sponsorship');?> :
+                                            <?php echo $this->__('Invitations');?> :
                                         </span><br>
-                                        <span class="nowrap <?php  echo $this->getSponsoringClass(); ?>" style="font-size:18px">
+                                        <span class="nowrap " style="font-size:18px">
                                             <span class="price">
-                                                <?php echo $this->getSponsoringResult(); ?>
+                                                <?php echo $this->getInvitationNumber(); ?>
+                                            </span>
+                                        </span>
+                                    </td>
+                                    <td class="a-center bold">
+                                        <span>
+                                            <?php echo $this->__('Godfathers');?> :
+                                        </span><br>
+                                        <span class="nowrap " style="font-size:18px">
+                                            <span class="price">
+                                                <?php echo $this->getFatherNumber(); ?>
+                                            </span>
+                                        </span>
+                                    </td>
+                                    <td class="a-center bold">
+                                        <span>
+                                            <?php echo $this->__('Godsons');?> :
+                                        </span><br>
+                                        <span class="nowrap " style="font-size:18px">
+                                            <span class="price">
+                                                <?php echo $this->getSonNumber(); ?>
                                             </span>
                                         </span>
                                     </td>

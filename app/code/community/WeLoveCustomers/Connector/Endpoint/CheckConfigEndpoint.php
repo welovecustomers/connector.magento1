@@ -14,9 +14,10 @@ class CheckConfigEndpoint extends BaseEndpoint
     public function checkConfig() {
 
         $jsonResponse = $this->doAuthRequest('checkInstall');
-
+        
         if($jsonResponse) {
             $response = json_decode($jsonResponse);
+
             return $response->res;
         }
 

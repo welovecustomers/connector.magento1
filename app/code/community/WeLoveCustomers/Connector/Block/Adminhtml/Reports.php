@@ -7,7 +7,9 @@
  */
 
 require_once 'WeLoveCustomers/Connector/Endpoint/ReferralInfosEndpoint.php';
+require_once 'WeLoveCustomers/Connector/Endpoint/StatsEndpoint.php';
 require_once 'WeLoveCustomers/Connector/Model/Offer.php';
+require_once 'WeLoveCustomers/Connector/Model/Stats.php';
 
 class WeLoveCustomers_Connector_Block_Adminhtml_Reports extends Mage_Checkout_Block_Onepage_Success {
 
@@ -22,6 +24,8 @@ class WeLoveCustomers_Connector_Block_Adminhtml_Reports extends Mage_Checkout_Bl
      */
     private $referral;
 
+    private $stats;
+
     /**
      * Reports constructor.
      * @param \Magento\Framework\View\Element\Template\Context $context
@@ -30,7 +34,9 @@ class WeLoveCustomers_Connector_Block_Adminhtml_Reports extends Mage_Checkout_Bl
     public function __construct()
     {
         $this->endpoint = new ReferralInfosEndpoint();
+        $statsEndpoint = new StatsEndpoint();
         $this->referral = $this->endpoint->findReferralInfos();
+        $this->stats = $statsEndpoint->findStats();
     }
 
     /**
@@ -38,7 +44,7 @@ class WeLoveCustomers_Connector_Block_Adminhtml_Reports extends Mage_Checkout_Bl
      */
     public function getMasterInfo()
     {
-        $offer = $this->referral->infos->masterOffer;
+        $offer = $this->referral->masterOffer;
         return $this->getOfferInfo($offer);
     }
 
@@ -46,7 +52,7 @@ class WeLoveCustomers_Connector_Block_Adminhtml_Reports extends Mage_Checkout_Bl
      * @return string
      */
     public function getSlaveInfo() {
-        $offer = $this->referral->infos->slaveOffer;
+        $offer = $this->referral->slaveOffer;
         return $this->getOfferInfo($offer);
     }
 
@@ -79,23 +85,20 @@ class WeLoveCustomers_Connector_Block_Adminhtml_Reports extends Mage_Checkout_Bl
     /**
      * @return string
      */
-    public function getSponsoringResult() {
-        $result = "-";
-
-        $nbSlave = $this->referral->availableCodeSlave;
-        $nbMaster = $this->referral->availableCodesMaster;
-
-        if($nbSlave) {
-            $result = $nbSlave;
-
-            if($nbMaster) {
-                $result.= " (".$this->getSponringPercent()."%)";
-            }
-        }
-
-        return $result;
+    public function getInvitationNumber() {
+        return $this->stats->contact;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getFatherNumber() {
+        return $this->stats->father;
+    }
+
+    public function getSonNumber() {
+        return $this->stats->slave;
+    }
     /**
      * @return float|null
      */
