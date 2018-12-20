@@ -37,7 +37,8 @@ class WeLoveCustomers_Connector_Extra_ConfigController extends Mage_Checkout_Car
         echo json_encode(array(
             'code' => 200,
             "status" => $status,
-            'magento_version' => Mage::getVersion(),
+            'framework_type' => 'Magento1',
+            'framework_version' => Mage::getVersion(),
             'php_version' => phpversion(),
             'module_version' => (string) Mage::getConfig()->getNode()->modules->WeLoveCustomers_Connector->version
         ));
