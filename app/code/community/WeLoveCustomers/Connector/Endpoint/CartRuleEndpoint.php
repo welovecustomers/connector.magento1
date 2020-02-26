@@ -59,7 +59,7 @@ class CartRuleEndpoint extends BaseEndpoint
             'stop_rules_processing' => '0',
             'is_advanced' => '1',
             'sort_order' => '0',
-            'simple_action' => $offer->offerValueType == Offer::TYPE_PERCENT ? Mage_SalesRule_Model_Rule::BY_PERCENT_ACTION: Mage_SalesRule_Model_Rule::BY_FIXED_ACTION,
+            'simple_action' => $offer->offerValueType == Offer::TYPE_PERCENT ? Mage_SalesRule_Model_Rule::BY_PERCENT_ACTION: Mage_SalesRule_Model_Rule::CART_FIXED_ACTION,
             'discount_amount' => $offer->offerValueType == Offer::TYPE_FREE_SHIPPING ? 0 : $offer->offerValue,
             'discount_qty' => 0,
             'discount_step' => '0',
