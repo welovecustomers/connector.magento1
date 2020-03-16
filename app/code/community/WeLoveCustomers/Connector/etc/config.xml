@@ -2,7 +2,7 @@
 <config>
     <modules>
         <WeLoveCustomers_Connector>
-            <version>1.2.3</version>
+            <version>1.3.4</version>
         </WeLoveCustomers_Connector>
     </modules>
     <global>

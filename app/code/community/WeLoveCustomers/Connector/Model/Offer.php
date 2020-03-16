@@ -27,6 +27,7 @@ class Offer
         $this->dateFrom= $data["dateFrom"];
         $this->dateTo= $data["dateTo"];
         $this->code = $data["code"];
+        $this->minimumAmountToBuy= $data["minimumAmountToBuy"];
         $this->minimumAmountForReward= $data["minimumAmountForReward"];
         $this->maximumDaysDelayForReward= $data["maximumDaysDelayForReward"];
         $this->offerValue= $data["offerValue"];

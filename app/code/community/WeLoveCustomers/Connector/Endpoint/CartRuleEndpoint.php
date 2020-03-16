@@ -48,7 +48,7 @@ class CartRuleEndpoint extends BaseEndpoint
             return $group['value'];
         }, Mage::getModel('customer/group')->getCollection()->toOptionArray());
 
-        return array (
+        $rule = array (
             'rule_id' => null,
             'name' => $offer->title,
             'description' => Offer::COUPON_PREFIX." ".strip_tags($offer->description),
@@ -79,6 +79,28 @@ class CartRuleEndpoint extends BaseEndpoint
                     0 => '',
                 )
         );
+        
+        if ($offer->minimumAmountToBuy){
+            $conditions = array(
+                "1" => array(
+                    "type" => "salesrule/rule_condition_combine",
+                    "aggregator" => "all",
+                    "value" => "1",
+                    "new_child" => null
+                ),
+                "1--1" => array(
+                    "type" => "salesrule/rule_condition_address",
+                    "attribute" => "base_subtotal",
+                    "operator" => ">=",
+                    "value" => $offer->minimumAmountToBuy
+                ),
+            );
+        }
+
+        $rule['conditions'] = $conditions;
+
+
+        return $rule;
     }
 
 }
