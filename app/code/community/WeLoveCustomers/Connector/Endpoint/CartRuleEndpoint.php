@@ -95,9 +95,9 @@ class CartRuleEndpoint extends BaseEndpoint
                     "value" => $offer->minimumAmountToBuy
                 ),
             );
+            $rule['conditions'] = $conditions;
         }
 
-        $rule['conditions'] = $conditions;
 
 
         return $rule;
